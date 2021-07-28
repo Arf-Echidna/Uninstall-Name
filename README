@@ -1,0 +1,23 @@
+<#
+.SYNOPSIS
+  Uninstall applications by name, using the uninstall / quietuninstall registry entries.
+.DESCRIPTION
+  Will always use the Quiet string if available, UNLESS the -IgnoreVendorSilentSwitches parameter is set to True. 
+  In this event, the script will run the normal uninstall string found in registry. 
+.PARAMETER SilentSwitches
+  Silent switches to apply to the end of the normal registry uninstall string. 
+  Generally not needed if a quiet uninstall string exists. 
+.PARAMETER IgnoreVendorSilentSwitches
+  If set to "True", will ignore the quietuninstall string and use normal uninstall string. 
+  You should use the -SilentSwitches parameter in conjunction with this. 
+.PARAMETER AppName
+  The name of the application(s) you are trying to remove. 
+  Please note that this script will loop through and attempt to remove ALL apps which match the "AppName" parameter. 
+.NOTES
+  Version:        1.0
+  Author:         https://github.com/Arf-Echidna/
+  Creation Date:  2021-07-28
+  Purpose/Change: Initial script development
+.EXAMPLE
+  .\Uninstall-Name.ps1 -AppName 'Firefox' -SilentSwitches '/s'
+  #>
